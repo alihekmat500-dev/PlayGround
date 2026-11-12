@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f6f1e7" />
+  <title>غشّاش بس شاطر | لعبة صالة الامتحان</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="غشاش بس شاطر">
+        <span class="brand-icon">✎</span><span>غشّاش <b>بس شاطر</b></span>
+      </a>
+      <div class="top-note"><span class="live-dot"></span> صالة الامتحان · الدور الأول</div>
+      <button class="sound-button" id="soundToggle" aria-label="تشغيل أو إيقاف الصوت" title="الصوت">♪<span>الصوت</span></button>
+    </header>
+
+    <section class="intro-row">
+      <div>
+        <div class="eyebrow"><span>مهمّة سرّية</span><i></i> لا تخلي الأستاذ يمسكك!</div>
+        <h1>الامتحان صعب… <em>والحل يمّك!</em></h1>
+        <p>استغل اللحظة المناسبة، طلّع ورقتك وخذ الأجوبة قبل لا يلتفت الأستاذ.</p>
+      </div>
+      <div class="round-tag"><span>المرحلة</span><strong>١ <small>/ ٣</small></strong></div>
+    </section>
+
+    <section class="game-layout" aria-label="لعبة صالة الامتحان">
+      <div class="play-column">
+        <div class="game-board" id="gameBoard">
+          <div class="board-topline"><span class="hall-label"><span class="hall-icon">▦</span> قاعة ٢٠٤</span><span class="board-hint" id="statusHint">الأستاذ دا يراقب… انتبه!</span></div>
+          <div class="scene-wrap">
+            <svg class="scene" viewBox="0 0 900 490" role="img" aria-label="مشهد صالة امتحانات فيها أستاذ يراقب الطلبة">
+              <defs>
+                <linearGradient id="wall" x2="0" y2="1"><stop stop-color="#e8dfd0"/><stop offset="1" stop-color="#f5eee2"/></linearGradient>
+                <linearGradient id="floor" x2="0" y2="1"><stop stop-color="#d9cdb9"/><stop offset="1" stop-color="#cbb99f"/></linearGradient>
+                <linearGradient id="deskTop" x2="0" y2="1"><stop stop-color="#d7a66e"/><stop offset="1" stop-color="#bd8350"/></linearGradient>
+                <radialGradient id="lamp" cx="50%" cy="0%" r="100%"><stop stop-color="#ffe9a8" stop-opacity=".65"/><stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/></radialGradient>
+                <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#3b3b32" opacity=".055"/></pattern>
+                <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%"><feGaussianBlur stdDeviation="5"/></filter>
+              </defs>
+              <rect width="900" height="490" fill="url(#wall)"/>
+              <rect width="900" height="490" fill="url(#dots)"/>
+              <rect y="319" width="900" height="171" fill="url(#floor)"/>
+              <path d="M0 319H900" stroke="#b6a58e" stroke-width="5"/>
+              <g opacity=".6" stroke="#b8aa96" stroke-width="2"><path d="M0 390H900M0 448H900"/><path d="M130 320l-50 170M340 320l-20 170M570 320l10 170M790 320l40 170"/></g>
+              <rect x="324" y="56" width="252" height="132" rx="8" fill="#f7f2e8" stroke="#b8aa94" stroke-width="7"/>
+              <rect x="338" y="70" width="224" height="104" rx="3" fill="#a8c8c0"/>
+              <path d="M338 145l65-51 49 36 42-31 68 55v20H338z" fill="#779e91" opacity=".7"/>
+              <path d="M338 167l67-42 45 26 39-19 73 35" fill="none" stroke="#d7ead8" stroke-width="5" opacity=".7"/>
+              <g transform="translate(60 68)"><rect width="118" height="76" rx="4" fill="#faf6ed" stroke="#c6b8a3" stroke-width="4"/><path d="M13 18h92M13 31h72M13 44h83M13 57h56" stroke="#baa98f" stroke-width="4" stroke-linecap="round"/><text x="58" y="-12" text-anchor="middle" fill="#9a8871" font-size="13" font-family="sans-serif">قواعد الامتحان</text></g>
+              <g transform="translate(704 58)"><rect width="130" height="92" rx="4" fill="#d5e0cb" stroke="#b8aa94" stroke-width="5"/><path d="M16 68q26-54 49-20 19-40 50-8" fill="none" stroke="#799274" stroke-width="5"/><path d="M64 90v-30" stroke="#799274" stroke-width="5"/></g>
+              <g transform="translate(450 37)"><path d="M-24 0h48l28 22h-104z" fill="#f3d996"/><path d="M-52 22h104L145 317h-394z" fill="url(#lamp)"/><path d="M0 0v-24" stroke="#776a58" stroke-width="5"/><circle cy="-25" r="6" fill="#776a58"/></g>
+              <g id="teacher" class="teacher" transform="translate(590 186)">
+                <ellipse cx="0" cy="105" rx="70" ry="13" fill="#715e4b" opacity=".2" filter="url(#shadow)"/>
+                <path d="M-23 84h18v36h-18zm30 0h18v36H7z" fill="#414b58"/>
+                <path d="M-40 44q40-23 80 0l17 48q-57 22-114 0z" fill="#536274"/>
+                <path d="M-26 48h52v29h-52z" fill="#f1eee5"/><path d="M-8 48h16l8 24-16 9-16-9z" fill="#d47e55"/>
+                <g id="teacherHead" class="teacher-head"><ellipse cy="20" rx="33" ry="37" fill="#dba77d"/><path d="M-32 12q-2-34 34-32 29 1 32 29-19-9-33-14-13 12-33 17" fill="#454039"/><path class="teacher-eyes" d="M-16 20h4m19 0h4" stroke="#3f342d" stroke-width="4" stroke-linecap="round"/><path d="M-5 34q7 5 14 0" fill="none" stroke="#9b5b4c" stroke-width="2.5" stroke-linecap="round"/></g>
+                <path d="M-42 54q-21 7-35 25l11 9q20-11 38-15M42 54q24 12 38 6l12 10q-24 22-59 2" fill="none" stroke="#dba77d" stroke-width="15" stroke-linecap="round"/>
+                <g class="clipboard"><rect x="65" y="49" width="35" height="47" rx="3" fill="#8b6646"/><path d="M71 58h23m-23 8h19m-19 8h21" stroke="#f2e6d3" stroke-width="2"/></g>
+              </g>
+              <g class="back-desk" transform="translate(131 262)"><ellipse cx="105" cy="100" rx="117" ry="13" fill="#705b43" opacity=".18"/><path d="M28 34v68m150-68v68" stroke="#78624c" stroke-width="9"/><path d="M0 24h205v22H0z" fill="#c18a57"/><path d="M9 46h187" stroke="#a27147" stroke-width="5"/><path d="M58 6q35-25 75 0v25H58z" fill="#e9c9ad"/><circle cx="96" cy="-4" r="22" fill="#d9a77f"/><path d="M74-7q3-28 28-23 18 2 19 23-25-11-47 0" fill="#4c4039"/><path d="M66 20h62v31H66z" fill="#73838b"/></g>
+              <g class="back-desk" transform="translate(565 260)"><ellipse cx="105" cy="100" rx="117" ry="13" fill="#705b43" opacity=".18"/><path d="M28 34v68m150-68v68" stroke="#78624c" stroke-width="9"/><path d="M0 24h205v22H0z" fill="#c18a57"/><path d="M55 5q41-26 82 0v27H55z" fill="#b9c9d2"/><circle cx="96" cy="-5" r="22" fill="#e1b18c"/><path d="M74-7q3-27 28-23 18 2 19 23-25-11-47 0" fill="#5a514a"/></g>
+              <g class="player" id="player">
+                <ellipse cx="452" cy="465" rx="178" ry="17" fill="#72583d" opacity=".18" filter="url(#shadow)"/>
+                <path d="M369 394h30v70h-30zm103 0h30v70h-30z" fill="#333e4b"/>
+                <path d="M335 347q115-50 230 0l26 91H308z" fill="#45576a"/>
+                <path d="M390 356q60 22 120 0l-10 42q-52 22-101 0z" fill="#f4eee4"/><path d="M441 358h18l12 33-21 14-21-14z" fill="#d4805b"/>
+                <circle cx="450" cy="328" r="42" fill="#d9a77f"/>
+                <path d="M409 319q3-43 43-42 37 2 40 39-23-14-43-21-15 17-40 24" fill="#423d38"/>
+                <path d="M436 330h4m20 0h4" stroke="#40332d" stroke-width="4" stroke-linecap="round"/><path d="M443 346q8 5 15 0" fill="none" stroke="#995c4b" stroke-width="2" stroke-linecap="round"/>
+                <path class="arm-left" d="M346 361q-34 27-43 65" fill="none" stroke="#d9a77f" stroke-width="18" stroke-linecap="round"/>
+                <path class="arm-right" d="M554 361q33 28 45 64" fill="none" stroke="#d9a77f" stroke-width="18" stroke-linecap="round"/>
+                <g id="cheatPaper" class="cheat-paper"><path d="M550 410l77-19 15 64-77 18z" fill="#fffdf5" stroke="#d8d1c5" stroke-width="3"/><path d="M566 416l40-10m-37 20 47-12m-42 22 32-8" stroke="#6e9a83" stroke-width="3" stroke-linecap="round"/><text x="603" y="452" text-anchor="middle" fill="#d2825f" font-size="11" font-weight="bold">سري!</text></g>
+                <g class="front-desk"><path d="M238 427h424v26H238z" fill="url(#deskTop)"/><path d="M259 453v37m383-37v37" stroke="#8c6240" stroke-width="13"/><path d="M246 427q207 17 408 0" fill="none" stroke="#e9c08f" stroke-width="4"/></g>
+                <g id="answerSheet" class="answer-sheet" transform="translate(359 405) rotate(-5)"><rect width="74" height="37" rx="2" fill="#fffdf5" stroke="#d4cbbd" stroke-width="2"/><path d="M9 10h52m-52 8h42m-42 8h49" stroke="#90a89a" stroke-width="2"/></g>
+              </g>
+              <g class="desk-details"><rect x="666" y="414" width="44" height="9" rx="4" fill="#eee5d8"/><path d="M684 414l-5-14h14l-5 14" fill="#333c45"/></g>
+              <rect class="vignette" width="900" height="490" fill="none" stroke="#806f5c" stroke-opacity=".10" stroke-width="28"/>
+            </svg>
+            <div class="watch-indicator" id="watchIndicator"><span>👀</span> عينه عليك!</div>
+            <div class="caught-flash" id="caughtFlash">انكشفنا!</div>
+            <div class="scene-shade" id="sceneShade"></div>
+            <div class="start-overlay" id="startOverlay">
+              <div class="start-card"><div class="start-emoji">🤫</div><h2>مستعد للمهمّة؟</h2><p>راقب الأستاذ… من يلتفت بعيد، اضغط مطوّلًا على زر الغش وخذ الأجوبة!</p><button class="primary-button" id="startButton">يلا نبدي <span>←</span></button><small>تقدر تلعب باللمس أو بزر المسافة</small></div>
+            </div>
+            <div class="end-overlay hidden" id="endOverlay"><div class="end-card"><div class="end-emoji" id="endEmoji">🏆</div><p class="end-kicker" id="endKicker">مهمة ناجحة</p><h2 id="endTitle">فلّيتها!</h2><p id="endMessage">جمعت كل الأجوبة وما انكشفت.</p><div class="end-score"><span>الأجوبة</span><strong id="finalScore">٠</strong></div><button class="primary-button" id="restartButton">إعادة اللعب <span>↻</span></button></div></div>
+          </div>
+          <div class="board-footer"><span><i class="teacher-dot"></i> الأستاذ يتجوّل</span><span class="sound-caption" id="soundCaption">اسمع خطواته… وخلك هادي</span><span class="seat-number">مقعد ١٧</span></div>
+        </div>
+        <div class="controls-row">
+          <div class="action-note"><span class="keycap">SPACE</span><span>أو المس الزر وخليك ضاغط</span></div>
+          <button class="cheat-button" id="cheatButton" disabled><span class="cheat-icon">▤</span><span class="cheat-copy"><b>طلّع الورقة</b><small id="cheatLabel">انتظر اللحظة المناسبة</small></span><span class="hold-ring"><span id="holdPercent">٠٪</span></span></button>
+        </div>
+      </div>
+
+      <aside class="stats-column">
+        <div class="stat-card timer-card"><div class="card-label"><span class="label-icon timer-icon">◷</span> الوقت المتبقي</div><div class="timer-value" id="timerValue">٠٠:٤٥</div><div class="timer-track"><div id="timerBar"></div></div><div class="timer-caption">كل ثانية تفرق…</div></div>
+        <div class="stat-card answers-card"><div class="card-label"><span class="label-icon answer-icon">✦</span> الأجوبة اللي جمعتها <span class="target">الهدف ٥</span></div><div class="answer-count"><strong id="answerCount">٠</strong><span>من ٥ أجوبة</span></div><div class="answer-dots" id="answerDots"><i></i><i></i><i></i><i></i><i></i></div><div class="answer-caption">أنت قدّها، باقي شوية!</div></div>
+        <div class="stat-card suspicion-card"><div class="card-label"><span class="label-icon alert-icon">!</span> الشك عند الأستاذ</div><div class="suspicion-row"><span id="suspicionText">مرتاح</span><strong id="suspicionNumber">٠٪</strong></div><div class="suspicion-track"><div id="suspicionBar"></div></div><div class="suspicion-caption"><span>هادئ</span><span>راح ينكشف أمرك!</span></div></div>
+        <div class="tip-card"><div class="tip-icon">💡</div><div><b>نصيحة سريعة</b><p id="tipText">من يلتفت الأستاذ للسبورة، هاي فرصتك!</p></div></div>
+        <button class="reset-button" id="resetButton">↻ <span>ابدأ من جديد</span></button>
+      </aside>
+    </section>
+    <footer class="page-footer"><span>لعبة خفيفة… بالتوفيق بالامتحان الحقيقي 😉</span><span>مصممة للعب على الموبايل والكمبيوتر</span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
